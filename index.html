@@ -1,0 +1,443 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Emilly ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(145deg, #250b19, #59152e, #260b20);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    text-align: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 650px;
+    padding: 35px 22px;
+    margin: auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.heart {
+    font-size: 55px;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    50% { transform: scale(1.2); }
+}
+
+h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 65px;
+    color: #ffb6ce;
+    margin: 15px 0;
+    font-weight: normal;
+}
+
+.subtitle {
+    color: #ffe1eb;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+button {
+    border: none;
+    padding: 14px 25px;
+    border-radius: 30px;
+    background: #e94f83;
+    color: white;
+    font-family: inherit;
+    font-size: 14px;
+    cursor: pointer;
+    margin: 8px;
+    transition: .3s;
+    box-shadow: 0 5px 20px #0004;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    background: #ff78a5;
+}
+
+.card {
+    display: none;
+    width: 100%;
+    background: #ffffff12;
+    border: 1px solid #ffffff30;
+    backdrop-filter: blur(12px);
+    padding: 28px 22px;
+    border-radius: 22px;
+    margin-top: 25px;
+    animation: aparecer .7s ease;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card p {
+    font-size: 14px;
+    line-height: 2;
+    color: #ffe8ef;
+}
+
+.card h2 {
+    color: #ffb6ce;
+    font-family: 'Great Vibes', cursive;
+    font-size: 38px;
+    font-weight: normal;
+    margin-bottom: 15px;
+}
+
+.cartinhas {
+    display: none;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.cartinha {
+    background: #ffffff13;
+    border: 1px solid #ffffff30;
+    border-radius: 15px;
+    padding: 16px;
+    margin: 12px 0;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.cartinha:hover {
+    background: #ffffff25;
+}
+
+.conteudo-cartinha {
+    display: none;
+    color: #ffe2ed;
+    font-size: 13px;
+    line-height: 1.9;
+    padding: 15px 5px 5px;
+}
+
+.final {
+    display: none;
+    margin-top: 25px;
+    animation: aparecer .8s ease;
+}
+
+.final h2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 43px;
+    color: #ffb6ce;
+    font-weight: normal;
+    margin: 15px 0;
+}
+
+.final p {
+    font-size: 14px;
+    line-height: 2;
+    color: #ffe8ef;
+}
+
+footer {
+    color: #ffffff80;
+    font-size: 11px;
+    margin-top: 35px;
+}
+
+.coracao {
+    position: fixed;
+    bottom: -30px;
+    pointer-events: none;
+    animation: subir linear forwards;
+    z-index: 1000;
+}
+
+@keyframes subir {
+    to {
+        transform: translateY(-115vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@media(max-width: 480px) {
+    h1 {
+        font-size: 55px;
+    }
+
+    .container {
+        padding: 25px 17px;
+    }
+
+    .card {
+        padding: 24px 17px;
+    }
+
+    button {
+        max-width: 100%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="heart">❤️</div>
+
+    <h1>Emilly</h1>
+
+    <p class="subtitle">
+        Existe uma pessoa que consegue deixar meus dias mais bonitos...
+        <br>
+        E essa pessoa é você.
+    </p>
+
+    <button onclick="comecar()">
+        Tenho uma surpresa para você ❤️
+    </button>
+
+    <div class="card" id="inicio">
+
+        <h2>Antes de tudo...</h2>
+
+        <p>
+            Quero que você saiba que sua presença me faz muito bem.
+            É incrível como alguém pode chegar de mansinho e fazer
+            tanta diferença na vida de outra pessoa.
+            <br><br>
+            E hoje eu só quero te lembrar o quanto você é especial para mim.
+        </p>
+
+        <button onclick="mostrarCartinhas()">
+            Abrir minhas cartinhas 💌
+        </button>
+
+    </div>
+
+    <div class="cartinhas" id="cartinhas">
+
+        <div class="cartinha" onclick="abrir(1)">
+            💌 Cartinha 1 — O seu sorriso
+
+            <div class="conteudo-cartinha" id="c1">
+                Seu sorriso tem um jeito inexplicável de melhorar meu dia.
+                Às vezes, tudo que preciso é de um pouquinho da sua atenção
+                para ficar feliz. ❤️
+            </div>
+        </div>
+
+        <div class="cartinha" onclick="abrir(2)">
+            💗 Cartinha 2 — Como me sinto com você
+
+            <div class="conteudo-cartinha" id="c2">
+                Com você eu me sinto à vontade para ser quem realmente sou.
+                Não preciso de grandes momentos, porque até os mais simples
+                ficam especiais quando estou com você.
+            </div>
+        </div>
+
+        <div class="cartinha" onclick="abrir(3)">
+            🌹 Cartinha 3 — O que eu desejo
+
+            <div class="conteudo-cartinha" id="c3">
+                Quero continuar conhecendo cada detalhe seu, descobrir
+                novos motivos para sorrir ao seu lado e construir
+                lembranças que façam nosso coração sorrir.
+            </div>
+        </div>
+
+        <div class="cartinha" onclick="abrir(4)">
+            ❤️ Cartinha 4 — Uma verdade
+
+            <div class="conteudo-cartinha" id="c4">
+                Não sei o que o futuro nos reserva, mas sei que gosto
+                muito de ter você no meu presente. E quero que você
+                saiba que meu carinho por você é verdadeiro.
+            </div>
+        </div>
+
+        <button onclick="declaracao()">
+            Tenho algo mais para te contar... ❤️
+        </button>
+
+    </div>
+
+    <div class="card" id="declaracao">
+
+        <h2>Emilly, meu bem...</h2>
+
+        <p id="texto"></p>
+
+        <button onclick="surpresa()">
+            Clique aqui, é especial! 💖
+        </button>
+
+    </div>
+
+    <div class="final" id="final">
+
+        <div class="heart">💗</div>
+
+        <h2>Eu escolheria você!</h2>
+
+        <p>
+            Entre tantas pessoas nesse mundo,
+            meu coração encontrou em você um motivo especial para sorrir.
+            <br><br>
+            Emilly, eu gosto muito de você!
+            <br><br>
+            ❤️
+        </p>
+
+    </div>
+
+    <footer>
+        Feito com carinho, especialmente para você. ❤️
+    </footer>
+
+</div>
+
+<script>
+
+function comecar() {
+    const inicio = document.getElementById('inicio');
+    inicio.style.display = 'block';
+
+    inicio.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center'
+    });
+}
+
+function mostrarCartinhas() {
+    const cartinhas = document.getElementById('cartinhas');
+    cartinhas.style.display = 'block';
+
+    cartinhas.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center'
+    });
+}
+
+function abrir(numero) {
+    const elemento = document.getElementById('c' + numero);
+
+    elemento.style.display =
+        elemento.style.display === 'block' ? 'none' : 'block';
+}
+
+let digitando = false;
+
+function declaracao() {
+    const card = document.getElementById('declaracao');
+
+    card.style.display = 'block';
+
+    card.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center'
+    });
+
+    if (digitando) return;
+    digitando = true;
+
+    const mensagem =
+        "Eu gosto de você de um jeito que nem sempre consigo colocar em palavras. " +
+        "Você me faz bem, me traz paz e faz com que eu me sinta feliz simplesmente por ter você por perto. " +
+        "Adoro conversar com você, rir com você e perceber que, mesmo nos dias comuns, você consegue ser a parte mais bonita deles. " +
+        "Não quero que você tenha dúvidas do quanto é especial para mim. " +
+        "Se eu pudesse pedir algo, seria a oportunidade de continuar fazendo parte dos seus dias e de te dar tantos motivos para sorrir quanto você me dá. " +
+        "Eu amo ter você na minha vida, Emilly. ❤️";
+
+    let i = 0;
+
+    const texto = document.getElementById('texto');
+    texto.innerHTML = "";
+
+    const intervalo = setInterval(() => {
+
+        texto.innerHTML += mensagem.charAt(i);
+
+        i++;
+
+        if (i >= mensagem.length) {
+            clearInterval(intervalo);
+        }
+
+    }, 40);
+}
+
+function surpresa() {
+
+    const final = document.getElementById('final');
+
+    final.style.display = 'block';
+
+    final.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center'
+    });
+
+    const simbolos = ['❤️', '💗', '💕', '💖', '💘', '🌹'];
+
+    for (let i = 0; i < 180; i++) {
+
+        setTimeout(() => {
+
+            const coracao = document.createElement('div');
+
+            coracao.className = 'coracao';
+
+            coracao.innerHTML =
+                simbolos[Math.floor(Math.random() * simbolos.length)];
+
+            coracao.style.left = Math.random() * 100 + 'vw';
+
+            coracao.style.fontSize =
+                (15 + Math.random() * 25) + 'px';
+
+            coracao.style.animationDuration =
+                (3 + Math.random() * 4) + 's';
+
+            document.body.appendChild(coracao);
+
+            setTimeout(() => {
+                coracao.remove();
+            }, 7500);
+
+        }, i * 20);
+
+    }
+}
+
+</script>
+
+</body>
+</html>
